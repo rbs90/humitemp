@@ -1,0 +1,14 @@
+#! /usr/bin/gnuplot
+set timefmt "%d.%m.%Y %H:%M"
+set xdata time
+set format x "%H:%M"
+set term pngcairo size 1500,1050 
+set title title
+set output outFile
+set xtics font "Arial, 20"
+set ytics nomirror font "Arial, 20"
+set y2tics nomirror font "Arial, 20"
+set xlabel "Zeit" font "Arial, 22"
+set ylabel "Temp" font "Arial, 22"
+set y2label "Luftf." font "Arial, 22"
+plot filename u 1:3 w lines title "Temperatur" lw 2, filename u 1:4 w lines title "Luftfeuchte" lw 2 axes x1y2
